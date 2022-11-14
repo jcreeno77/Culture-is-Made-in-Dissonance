@@ -12,13 +12,13 @@ public class selectControllerScript : MonoBehaviour
     void Start()
     {
         selection = 0;
-        int i = 0;
+        int i = 31;
         Debug.Log(inputs[0]);
         foreach (Transform child in inputFields.transform)
         {
             
             inputs[i] = child.transform.GetChild(0).gameObject;
-            i++;
+            i--;
         }
     }
 
@@ -44,6 +44,8 @@ public class selectControllerScript : MonoBehaviour
 
     void increaseSelection()
     {
+        inputs[selection].transform.parent.gameObject.SetActive(false);
         selection += 1;
+
     }
 }

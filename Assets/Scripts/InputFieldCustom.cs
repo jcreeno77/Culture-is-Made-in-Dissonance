@@ -2064,8 +2064,8 @@ namespace TMPro
 
                         if (lineType != LineType.MultiLineNewline)
                         {
-                            m_ReleaseSelection = true;
-                            return EditState.Finish;
+                            //m_ReleaseSelection = true;
+                            //return EditState.Finish;
                         }
                         break;
                     }
@@ -2100,6 +2100,7 @@ namespace TMPro
                 {
                     counter += 1;
                     Append(c);
+                    mainCam.GetComponent<EventManager>().matchingCharPressed = true;
                 }
                 
             }

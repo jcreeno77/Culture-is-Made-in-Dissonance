@@ -7,6 +7,7 @@ public class bikePhysics : MonoBehaviour
     Rigidbody2D rb;
     AudioSource adSrc;
     [SerializeField] AudioClip bikeRing;
+    [SerializeField] GameObject mainCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +18,6 @@ public class bikePhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rb.AddForce(new Vector2(5, 5));
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rb.AddForce(new Vector2(-5, 5));
-        }
 
     }
 
@@ -42,7 +34,8 @@ public class bikePhysics : MonoBehaviour
 
     void addForce()
     {
-        rb.AddForceAtPosition(new Vector2(200, 0), new Vector2(transform.position.x-2f, transform.position.y-2f));
+        float force = mainCam.GetComponent<EventManager>().WPM / 10;
+        rb.AddForceAtPosition(new Vector2(25*force, 0), new Vector2(transform.position.x-2f, transform.position.y-1.5f));
         adSrc.PlayOneShot(bikeRing);
     }
 }
