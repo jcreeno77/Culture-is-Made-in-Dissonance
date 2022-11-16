@@ -6,7 +6,7 @@ public class guyTalk : MonoBehaviour
 {
     [SerializeField] GameObject mainCam;
     public bool talkNow;
-    float timer;
+    public float timer;
     [SerializeField] Sprite talking_spr;
     [SerializeField] Sprite normal_spr;
     AudioSource audSrc;

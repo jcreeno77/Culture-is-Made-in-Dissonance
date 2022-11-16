@@ -93,6 +93,5 @@ public class EventManager : MonoBehaviour
         player2WPM.GetComponent<TextMeshProUGUI>().text = ((int)rightWPM).ToString();
         player1ScoreText.GetComponent<TextMeshProUGUI>().text = player1Score.ToString();
         player2ScoreText.GetComponent<TextMeshProUGUI>().text = player2Score.ToString();
-
     }
 }

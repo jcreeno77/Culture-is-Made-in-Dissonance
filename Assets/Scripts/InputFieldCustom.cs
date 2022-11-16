@@ -297,6 +297,7 @@ namespace TMPro
         private string m_text;
         private int counter;
         [SerializeField] GameObject mainCam;
+        [SerializeField] GameObject bike;
 
         protected int m_StringPosition = 0;
         protected int m_StringSelectPosition = 0;
